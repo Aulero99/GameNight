@@ -31,6 +31,17 @@
         <div class="col-12">
           <div id="app"></div>
         </div>
+        <div class="col-12">
+          <form onsubmit="app.playersController.addPlayer()">
+            <div>
+              <label for="name" name="playerName">Player Name:</label>
+              <input type="text" minlength="2" maxlength="15" name="name" required />
+            </div>
+            <div>
+              <button type="submit">Add Player</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </main>

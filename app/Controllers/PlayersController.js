@@ -1,4 +1,6 @@
 import { appState } from "../AppState.js";
+import { Player } from "../Models/Player.js";
+import { generateId } from "../Utils/generateId.js";
 
 function drawPlayers() {
     let template = ''
@@ -18,7 +20,25 @@ function drawPlayers() {
 export class PlayersController {
     //NOTE Builds the controller
     constructor(){
-        console.log('Hello World')
+        drawPlayers()
+    }
+
+    addPlayer(){
+        console.log('The addPlayer function is being called');
+        try{
+            window.event.preventDefault()
+            const form = window.event.target
+            let name = form.name.value
+
+            console.log(name);
+            appState.players.push(new Player({id:generateId(), name:name, score:0}))
+            
+            console.log(appState.players);
+            form.reset()
+        } catch(e) {
+            console.error('[addPlayer]', error)
+        }
+        appState.players.push()
         drawPlayers()
     }
 }

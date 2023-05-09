@@ -11,6 +11,7 @@ class AppState extends EventEmitter {
 
   // NOTE v CODE GOES HERE v
 
+
   players = [
     new Player(
       {
